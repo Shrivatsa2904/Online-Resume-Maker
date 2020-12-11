@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        {% load static %}  
+        <link rel = "stylesheet" href = "{%   static 'orm/style.css' %}">
+    </head>
+    <body>
+        <div class = "login">
+           
+            <div class = "form-box">  
+                <br>  
+              <h1 class="heading">Login</h1>
+              <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="Email" required>
+                <input type="text" class="input-field" placeholder="Password" required>
+                <br>
+                <button type="submit" class="submit-btn">Login</button>
+                <br>
+                <a style="color: blue; font-size: small;" class="heading2">New user click on to register</a>
+            </form>
+            <div class="social-icons">
+                <h5 class="heading3">Login with</h5>
+                <img src = "{%   static 'orm/images/google.png' %}"
+              </div>
+          </div>
+            </div>
+           
+    </body>
+</html>

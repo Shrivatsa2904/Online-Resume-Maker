@@ -19,7 +19,7 @@
     position: relative;
     margin : 3% auto;
     background: #fff;
-    padding: 0px;
+    padding: 5px;
     overflow: hidden;
 }
 
@@ -45,7 +45,7 @@
     border-radius: 30px;
 }
 .social-icons {
-    margin: 245px 35px 20px 2px;
+    margin: 285px 35px 20px 2px;
     text-align: centre;
 
 }
@@ -54,7 +54,7 @@
     margin : 10px 30px 80px 80px #7f7f7f3d;
     cursor: pointer;
     border-radius: 50%;
-    margin-left: 155px;
+    margin-left: 158px;
 }
 
 .input-group {
@@ -99,10 +99,10 @@
     color: black;
 }
 .heading2{
-    margin-left: 78px;
+    margin-left: 98px;
     color: black;
 }
 .heading3{
-    margin-left: 150px;
+    margin-left: 130px;
     color: black;
 }
