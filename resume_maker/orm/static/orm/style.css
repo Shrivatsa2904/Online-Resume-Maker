@@ -2,7 +2,7 @@
     font-family: san-serif;
 }
 .login{
-    height : 100%;
+    height : 120%;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("images/background.jpg");
     background-position: center;
@@ -15,7 +15,7 @@
 
 .form-box{
     width : 380px;
-    height : 480px;
+    height : 500px;
     position: relative;
     margin : 3% auto;
     background: #fff;
@@ -58,7 +58,7 @@
 }
 
 .input-group {
-    top : 100px;
+    top : 120px;
     position: absolute;
     width: 290px;
     transition: .4s;
@@ -105,4 +105,12 @@
 .heading3{
     margin-left: 150px;
     color: black;
+}
+#messages{
+    background-color: grey;
+    color: #fff;
+    padding: 0px;
+    margin-top: 0px;
+    text-align:center;
+    font-size: smaller;
 }

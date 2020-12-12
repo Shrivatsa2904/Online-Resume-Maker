@@ -9,16 +9,23 @@
         <div class = "login">
            
             <div class = "form-box">  
-                <br>  
-              <h1 class="heading">Login</h1>
-              <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="Email" required>
-                <input type="text" class="input-field" placeholder="Password" required>
+              {% for message in messages%}
+              <p id="messages"> {{message}}</p>
+              {% endfor %}
+              <h2 class="heading">Login</h2>
+              <br>
+              <form id="login" class="input-group" method="POST" action="">
+                  {% csrf_token %}
+                <input type="text" name="username" class="input-field" placeholder="Username" required>
+                <input type="text"  type="password" name="password" class="input-field" placeholder="Password" required>
                 <br>
-                <button type="submit" class="submit-btn">Login</button>
+                <button  class="submit-btn">Login</button>
                 <br>
-                <a style="color: blue; font-size: small;" class="heading2">New user click on to register</a>
+                <div>
+                    Don't have an account? <a href="{% url 'orm-register' %}" >Sign Up</a>
+                </div>
             </form>
+           
             <div class="social-icons">
                 <h5 class="heading3">Login with</h5>
                 <img src = "{%   static 'orm/images/google.png' %}"

@@ -2,7 +2,7 @@
     font-family: san-serif;
 }
 .login{
-    height : 100%;
+    height : 120%;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("images/background.jpg");
     background-position: center;
@@ -15,11 +15,11 @@
 
 .form-box{
     width : 380px;
-    height : 480px;
+    height : 550px;
     position: relative;
-    margin : 3% auto;
+    margin : 2% auto;
     background: #fff;
-    padding: 5px;
+    padding: 2px;
     overflow: hidden;
 }
 
@@ -45,9 +45,9 @@
     border-radius: 30px;
 }
 .social-icons {
-    margin: 285px 35px 20px 2px;
+    margin: 330px 35px 20px 2px;
     text-align: centre;
-
+   
 }
 .social-icons img {
     width: 50px ;
@@ -61,18 +61,19 @@
     top : 100px;
     position: absolute;
     width: 290px;
-    transition: .4s;
+    margin-left: 50px;
 }
 .input-field {
     width: 100%;
     padding: 10px 0;
-    margin: 8px 0;
+    margin: 6px 0;
     border-left: 0;
     border-right: 0;
     border-top: 0;
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
+  
 }
 
 .submit-btn {
@@ -80,29 +81,34 @@
     padding: 10px 30px;
     cursor: pointer;
     display: block;
-    margin: auto;
+    margin: 20px 20px 20px 20px;
     background: linear-gradient(to right, #ff105f,#ffad06);
     border: 0;
     outline: none;
     border-radius: 30px;
 }
 
-#login {
-    left : 50px;
-}
 
-#register {
-    left : 450px;
-}
 .heading {
     margin-left: 140px;
     color: black;
 }
 .heading2{
-    margin-left: 98px;
+    margin-left: 90px;
     color: black;
+   
 }
 .heading3{
-    margin-left: 130px;
+    margin-left: 150px;
+    margin-top: 20px;
     color: black;
+   
+}
+#messages{
+    background-color: red;
+    color: darkslategrey;
+    padding: 0px;
+    margin-top: 0px;
+    text-align:center;
+    font-size: smaller;
 }

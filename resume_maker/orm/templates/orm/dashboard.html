@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        {% load static %}  
+        <link rel = "stylesheet" href = "{%   static 'orm/style2.css' %}">
+    </head>
+    <body>
+       <span>Hello, {{request.user}}</span>
+       <span><a href="{% url 'orm-logout'%}"> Logout </a></span>
+    </body>
+</html>
