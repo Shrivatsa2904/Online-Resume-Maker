@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from .forms import createUserForm
+from .forms import createUserForm,personinfo,educationFormset,projectFormset,internshipFormset,technicalinfo,certificateFormset
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user,allowed_users
@@ -12,8 +12,31 @@ from django.contrib.auth.models import Group
 # Create your views here.
 @login_required(login_url = 'orm-login')
 def dashboard(request):
-    return render(request,'orm/dashboard.html')
-
+    form = personinfo()
+    educationform = educationFormset()
+    projectform = projectFormset()
+    internshipform = internshipFormset()
+    certificateform = certificateFormset()
+    technicalform = technicalinfo()
+    if request.method == 'POST':
+        form = personinfo(request.POST)
+        educationform = educationFormset(request.POST)
+        projectform = projectFormset(request.POST)
+        internshipform = internshipFormset(request.POST)
+        certificateform = certificateFormset(request.POST)
+        technicalform = technicalinfo(request.POST)
+        print("vatsa not valid")
+        if  form.is_valid():
+            print("vatsa valid")
+            name = educationform
+            new_resume_item = form.save(commit=False)
+            new_resume_item.user = request.user
+            new_resume_item.save()
+            return render(request, 'orm/samples.html', {'form':name })
+    print("fail")
+    return render(request, 'orm/dashboard.html', {'form': form,'edform':educationform,'proform':projectform,
+    'intform':internshipform,'certform': certificateform,'techform':technicalform})
+   
 @unauthenticated_user
 def loginpage(request):
 
@@ -55,3 +78,8 @@ def register(request):
 @unauthenticated_user
 def home(request):
     return render(request,'orm/home.html')
+
+
+def samplepage(request):
+    return render(request,'orm/samples.html')
+

@@ -1,0 +1,130 @@
+*{
+    font-family: san-serif;
+}
+.login{
+    height : 120%;
+    width: 100%;
+    background-image:url("images/background1.png");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    margin:0;
+    padding:0;
+
+}
+
+.form-box{
+    width : 500px;
+    height : 550px;
+    position: relative;
+    margin : 7% 36% ;
+    background: rgb(255, 0,0,0);
+    padding: 0px;
+    overflow: hidden;
+}
+
+.button-box{
+    width: 10px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+
+
+#btn {
+    width: 95%;
+    padding: 50px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.social-icons {
+    margin: 245px 35px 20px 2px;
+    text-align: centre;
+
+}
+.social-icons img {
+    width: 50px ;
+    margin : 10px 30px 80px 80px #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 155px;
+}
+
+.input-group {
+    top : 120px;
+    position: absolute;
+    width: 290px;
+    transition: .4s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    margin: 8px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 5% auto;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: white;
+}
+
+#login {
+    left : 50px;
+}
+
+#register {
+    left : 450px;
+}
+.heading {
+    margin-left: 160px;
+    color: white;
+    font-size: 1.9em;
+}
+.heading2{
+    margin-left: 78px;
+    color: white;
+
+}
+.heading3{
+    margin-left: 120px;
+    color: white;
+     margin-top: 20px;
+     font-size: 1.6em;
+}
+#messages{
+    background-color: grey;
+    color: #fff;
+    padding: 0px;
+    margin-top: 0px;
+    text-align:center;
+    font-size: smaller;
+}
+div{
+    margin-left: 30px;
+    color: white;
+
+}
+a{
+    color: black;
+}

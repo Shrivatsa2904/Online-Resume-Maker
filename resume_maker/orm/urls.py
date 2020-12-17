@@ -6,6 +6,7 @@ urlpatterns = [
       path('dashboard/', views.dashboard, name='orm-dashboard'),
     path('login/', views.loginpage, name='orm-login'),
       path('register/', views.register, name='orm-register'),
-      path('logout/', views.logoutuser, name='orm-logout')
+      path('logout/', views.logoutuser, name='orm-logout'),
+       path('samples/', views.samplepage, name='orm-sample')
 
 ]

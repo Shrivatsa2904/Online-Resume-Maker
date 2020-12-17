@@ -1,11 +1,49 @@
 <!DOCTYPE html>
+{% load static %}  
 <html>
     <head>
-        <title>
-            Home
-        </title>
+        <title>Home Page</title>
+        {% load static %}  
+        <link rel = "stylesheet" href = "{%   static 'orm/style3.css' %}">
+
     </head>
     <body>
-        <h1> Welcome to online Resume Maker</h1>
+        <div class = "login">
+           <div class="heading4">
+               <h1 >ONLINE RESUME MAKER</h1>
+           </div>
+           <div class="aside1">
+           <h3 style="font-style: italic; margin-left: 20px;">About:</h3>
+           <p class="aside2">
+               lkSDdhfcsdknszdnzkl
+               xdkjvnxkjvxkv<span>xnklvn<span>n
+               skjkfjskskvidokvj<br>dovljdlkvjmdlkvmd
+               jsfsjfb<br>jsfb<span>kjs
+                <br><br>
+
+                xdkjvnxkjvxkv<span>xnklvn<span>n
+               skjkfjskskvidokvj<br>dovljdlkvjmdlkvmd
+             jsfsjfb<br>jsfb<span>kjs
+                 ksovsopv
+                 lkSDdhfcsdknszdnzkl
+               xdkjvnxkjvxkv<span>xnklvn<span>n
+               skjkfjskskvidokvj<br>dovljdlkvjmdlkvmd
+               jsfsjfb<br>jsfb<span>kjs
+                <br><br>
+
+           </p>
+           
+           <button class="btn1" type="button"  onclick="location.href = '{% url 'orm-login' %}';">Login</button>
+           
+           <button class="btn1" id="b01" type="button" onclick="location.href = '{% url 'orm-register' %}';">Register</button>
+           <span><span><p  id="aside01">Click Above to create your Resume</p>
+
+           </div>
+
+        
+    
+        
+        
+     
     </body>
 </html>
