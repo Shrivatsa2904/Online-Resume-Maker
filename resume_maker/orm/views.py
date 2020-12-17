@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user,allowed_users
 from django.contrib.auth.models import Group
 
+
 # Create your views here.
 @login_required(login_url = 'orm-login')
 def dashboard(request):
@@ -16,26 +17,70 @@ def dashboard(request):
     educationform = educationFormset()
     projectform = projectFormset()
     internshipform = internshipFormset()
-    certificateform = certificateFormset()
+   
     technicalform = technicalinfo()
     if request.method == 'POST':
         form = personinfo(request.POST)
         educationform = educationFormset(request.POST)
-        projectform = projectFormset(request.POST)
-        internshipform = internshipFormset(request.POST)
-        certificateform = certificateFormset(request.POST)
-        technicalform = technicalinfo(request.POST)
         print("vatsa not valid")
-        if  form.is_valid():
+        if  form.is_valid() and educationform.is_valid():
             print("vatsa valid")
-            name = educationform
+            education = educationform.cleaned_data
             new_resume_item = form.save(commit=False)
             new_resume_item.user = request.user
             new_resume_item.save()
-            return render(request, 'orm/samples.html', {'form':name })
+            name = form.cleaned_data
+            request.session['personalinfo'] = name
+            request.session['educationinfo'] = education
+            return  redirect(projectview)
     print("fail")
-    return render(request, 'orm/dashboard.html', {'form': form,'edform':educationform,'proform':projectform,
-    'intform':internshipform,'certform': certificateform,'techform':technicalform})
+    return render(request, 'orm/dashboard.html', {'form': form,'edform':educationform})
+
+@login_required(login_url = 'orm-login')
+def projectview(request):
+    projectform = projectFormset()
+    if request.method == 'POST':
+        projectform = projectFormset(request.POST)
+        if  projectform.is_valid():
+            project = projectform.cleaned_data
+            request.session['projectinfo'] = project
+            return  redirect(internshipview)
+    return render(request, 'orm/samples.html', {'proform':projectform})
+
+@login_required(login_url = 'orm-login')
+def internshipview(request):
+    internshipform = internshipFormset()
+    if request.method == 'POST':
+        internshipform =  internshipFormset(request.POST)
+        if  internshipform.is_valid():
+            internship = internshipform.cleaned_data
+            request.session['internshipinfo'] = internship
+            return  redirect(certificateview)
+
+    return render(request, 'orm/internship.html', {'intform':internshipform})
+
+@login_required(login_url = 'orm-login')
+def certificateview(request):
+    certificateform = certificateFormset()
+    tech = technicalinfo
+    if request.method == 'POST':
+        certificateform =  certificateFormset(request.POST)
+        tech = technicalinfo(request.POST)
+        if   certificateform.is_valid() and tech.is_valid():
+            certificate =  certificateform.cleaned_data
+            technical = tech.cleaned_data
+            request.session['certificateinfo'] =  certificate
+            request.session['technicalinfo'] =  technical
+            return  render(request,'orm/choice.html',{'internship':request.session['internshipinfo'],
+            'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
+            'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']})
+
+    return render(request, 'orm/certificate.html', {'certform':certificateform,'techform':tech })
+
+@login_required(login_url = 'orm-login')
+def choiceview(request):
+    return render(request, 'orm/choice.html')
+
    
 @unauthenticated_user
 def loginpage(request):
@@ -80,6 +125,5 @@ def home(request):
     return render(request,'orm/home.html')
 
 
-def samplepage(request):
-    return render(request,'orm/samples.html')
+
 

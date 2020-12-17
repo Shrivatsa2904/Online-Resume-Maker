@@ -55,18 +55,7 @@
               <button id="add-form" type="button">Add Another Education</button>
            
             </div>
-            <div class="tab" id = "pro">Projects:
-              {{proform.management_form}}
-              {% for g in proform %}
-              <div class="pro-form">
-                <br>
-              {{g.as_p}}
-              </div>
-              {% endfor %}
-              <br>
-              <button id="add-form" type="button">Add Another Education</button>
-           
-            </div>
+          
             <div style="overflow:auto;">
               <div style="float:right;">
                 <br>
@@ -82,7 +71,6 @@
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
-              <span class="step"></span>
             </div>
         </form>
 
@@ -90,7 +78,7 @@
           let edForm = document.querySelectorAll(".ed-form")
           let container = document.querySelector("#ed")
           let addButton = document.querySelector("#add-form")
-          let totalForms = document.querySelector("#id_edu-TOTAL_FORMS")
+          let totalForms = document.querySelector("#id_form-TOTAL_FORMS")
   
           let formNum = edForm.length-1
           addButton.addEventListener('click', addForm)
@@ -99,33 +87,10 @@
               e.preventDefault()
   
               let newForm = edForm[0].cloneNode(true)
-              let formRegex = RegExp(`edu-(\\d){1}-`,'g')
+              let formRegex = RegExp(`form-(\\d){1}-`,'g')
   
               formNum++
-              newForm.innerHTML = newForm.innerHTML.replace(formRegex, `edu-${formNum}-`)
-              container.insertBefore(newForm, addButton)
-              
-              totalForms.setAttribute('value', `${formNum+1}`)
-          }
-      </script>
-        <script>
-          let proForm = document.querySelectorAll(".pro-form")
-          let container = document.querySelector("#pro")
-          let addButton = document.querySelector("#add-form")
-          let totalForms = document.querySelector("#id_proj-TOTAL_FORMS")
-  
-          let formNum = proForm.length-1
-          addButton.addEventListener('click', addForm)
-  
-          function addForm(e){
-            console.log("Clicked")
-              e.preventDefault()
-  
-              let newForm = proForm[0].cloneNode(true)
-              let formRegex = RegExp(`proj-(\\d){1}-`,'g')
-  
-              formNum++
-              newForm.innerHTML = newForm.innerHTML.replace(formRegex, `proj-${formNum}-`)
+              newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`)
               container.insertBefore(newForm, addButton)
               
               totalForms.setAttribute('value', `${formNum+1}`)

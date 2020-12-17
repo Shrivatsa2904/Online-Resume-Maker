@@ -2,7 +2,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Project Page</title>
+        <title>Certificate Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,16 +17,23 @@
           </ul>
           <form id="regForm" class = "reff" method="POST" action="">
             {% csrf_token %}
-            <div class="tab" id = "ed">Projects:
-              {{proform.management_form}}
-              {% for f in proform %}
+            <div class="tab" >Technical Skills:
+                
+                  <br>
+                {{techform.as_p}}
+            
+               
+            </div>
+            <div class="tab" id = "ed">Certifications:
+              {{certform.management_form}}
+              {% for f in certform %}
               <div class="ed-form">
                 <br>
               {{f.as_p}}
               </div>
               {% endfor %}
               <br>
-              <button id="add-form" type="button">Add Another Project</button>
+              <button id="add-form" type="button">Add Another Certification</button>
            
             </div>
           
@@ -40,6 +47,7 @@
             </div>
             <!-- Circles which indicates the steps of the form: -->
             <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>

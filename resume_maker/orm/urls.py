@@ -7,6 +7,9 @@ urlpatterns = [
     path('login/', views.loginpage, name='orm-login'),
       path('register/', views.register, name='orm-register'),
       path('logout/', views.logoutuser, name='orm-logout'),
-       path('samples/', views.samplepage, name='orm-sample')
+       path('samples/', views.projectview, name='orm-sample'),
+         path('internship/', views.internshipview, name='orm-internship'),
+          path('certificate/', views.certificateview, name='orm-certificate'),
+          path('choice/', views.choiceview, name='orm-choice')
 
 ]

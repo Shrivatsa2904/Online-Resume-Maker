@@ -49,6 +49,9 @@ class projects(models.Model):
     description =  models.TextField(max_length=2047, blank=True)
     tech = models.CharField(max_length=127, blank=True)
 
+    class meta:
+        db_table = 'projectdb'
+
     def __unicode__(self):
         return "{}: {} at {} ({})".format(self.title,
                                           self.description,

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Choice Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel = "stylesheet" href = "{%   static 'orm/style2.css' %}">
+    </head>
+    <body>
+        <ul>
+            <li><a style="float:right" href="{% url 'orm-dashboard'%}">Home</a></li>
+           <li class="usern">Hello, {{request.user}}</li>
+            <li style="float:right"><a href="{% url 'orm-logout'%}"> Logout </a></li>
+          </ul>
+
+       
+          {{personal}}
+          <br>
+          {% for i in education %}
+          {{i}}
+          {% endfor%}
+        
+       <br>
+       {% for j in internship %}
+        {{j}}
+        {% endfor%}
+        <br>
+        {% for k in project %}
+        {{k}}
+        {% endfor%}
+        <br>
+        {% for l in certificate %}
+        {{l}}
+        {% endfor%}
+        <br>
+     
+        {{tech}}
+      
+
+
+
+    </body>
+</html>
