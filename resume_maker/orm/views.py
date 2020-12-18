@@ -94,9 +94,7 @@ def certificateview(request):
             technical = tech.cleaned_data
             request.session['certificateinfo'] =  certificate
             request.session['technicalinfo'] =  technical
-            return  render(request,'orm/choice.html',{'internship':request.session['internshipinfo'],
-'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
-'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']})
+            return  redirect(render_pdf)
 
     return render(request, 'orm/certificate.html', {'certform':certificateform,'techform':tech })
 

@@ -5,37 +5,15 @@
     <link type="text/css" rel="stylesheet" href="https://www.dropbox.com/s/trsldt0me90jzs8/resume.css"/>
     <title>Resume</title> 
     <link rel = "stylesheet" href = "{%   static 'orm/resume1.css' %}">
-    <style type="text/css">
-    @page {
-      size: A4;
-      margin: 1cm;
-      @frame footer {
-          -pdf-frame-content: footerContent;
-          bottom: 0cm;
-          margin-left: 9cm;
-          margin-right: 9cm;
-          height: 1cm;
-      }
-
-      div
-{
-    border-radius: 5px;
-    }
-#header
-{
-    position: absolute;
-    z-index: 1;
-    height:70px;
-    width: 98%;
-    background-color: white;
-    margin-top: 20px;
-	}
+    <style>
+    #nm1{
+	float:left;
+	font-size: 14px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bold;
+	list-style-type: none;
 	
-#headp{
-	position: absolute;
-	height:90px;
-	background-color: white;
-    margin-top: 40px;
 }
 
 #nm {
@@ -48,32 +26,22 @@
 	
 }
 
-#nm1{
-	float:left;
-	font-size: 16px;
-	font-family: 'Times New Roman', Times, serif;
-	color: black;
-	font-weight:bolder;
-	list-style-type: none;
-	
-}
-
 #nm2{
 	float:left;
-	font-size: 16px;
+	font-size: 14px;
 	font-family: 'Times New Roman', Times, serif;
 	color: black;
-	font-weight:bold;
+	font-weight:200;
 	list-style-type: none;
 	
 }
 
 #nm3{
 	float:left;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: 'Times New Roman', Times, serif;
 	color: black;
-	font-weight:bolder;
+	font-weight:bold;
 	list-style-type: none;
 	
 }
@@ -81,17 +49,7 @@
 
 #nm4{
 	float:left;
-	font-size: 20px;
-	font-family: 'Times New Roman', Times, serif;
-	color: black;
-	font-weight:bolder;
-	list-style-type: none;
-	tab-size: 2;
-}
-
-#nm5{
-	float:left;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: 'Times New Roman', Times, serif;
 	color: black;
 	font-weight:bold;
@@ -99,7 +57,25 @@
 	tab-size: 2;
 }
 
+#nm5{
+	float:left;
+	font-size: 18px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bold;
+	list-style-type: none;
+	tab-size: 2;
+}
 
+#nm6 {
+	float:left;
+	font-size: 13px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight: bold;
+	tab-size: 2;
+	
+}
 
 #name {
   
@@ -109,7 +85,7 @@
 	font-family: 'Times New Roman', Times, serif;
 	color: black;
 	font-weight: bold;
-	
+	list-style-type: none;
 }
 
 #email{
@@ -218,48 +194,42 @@ td
 	
 	td {
 		border: none;
-	}
-      
-    </style>
+  }
+  
+  
+      </style>
   
     </head>
-    <body>
-      
   
-      <html>
        
        <body>
        
-        <table width="100%" >
-          <tr valign="top">
-          <td bgcolor="white" width="2%">
-         
-          </td>
-          <td bgcolor="white" height="200" width="98%" >
+       
             <div id = "headp"></div>
-            <li id="nm1">{{personal.name}}</li>
             <br>
+            <br>
+            <li id="nm1" style="list-style-type: none ;">{{personal.name}}</li>
             <li id="nm">Email: {{personal.email}}</li>
-            <br>
-            <li id="nm">Tel: +91{{personal.phone}}</li>
-            <br>
+    
+            <li id="nm">Tel: +91 {{personal.phone}}</li>
+           
             <li id="nm">{{personal.linkedin}}</li>
-            <br>
+           
             <li id="nm">{{personal.github}}</li>
-            <br>
+           
           </div>
           <br>
           <br>
             <div id = "executive summary">
               <li id="nm1">EXCECUTIVE SUMMARY</li>
-              <br>
+              
               <li id="nm2"> {{personal.summary}}. </li>
             
             </div>
-            <br>
+            
             <br>
             <div id = "education">
-              <br>
+              
               <li id="nm1">EDUCATION</li>
               {% for e in education %}
               <br>
@@ -271,58 +241,56 @@ td
                   <td bgcolor="white" width="50%">
                    
                     <li id="nm3"> {{e.name}} </li>
-                    <br>
+                 
                    
                     <li id="nm2"> {{e.subject}} </li>
-                    <br>
+                   
                     
                     <li id="nm3"> {{e.score}} </li>
-                    <br>
+                   
                         </td>
                         <td bgcolor="white" width="20%">
                           <li id="nm3"> {{e.location}} </li>
                               </td>
                 </tr>
               </table>
-                  <br>
+                 
              {% endfor %}
             </div>
             <br>
             <div id = "projects">
               <li id="nm1">ACADEMIC PROJECT</li>
               {% for p in project %}
-              <br>
-              <br>
-              <li id="nm1"> {{p.title}} </li>
-              <br>
-              <li id="nm2"> {{p.description}} </li>
-              <br>
-              <li id="nm2">Technology/Tools: {{p.tech}} </li>
+            
+              <li id="nm6"> {{p.title}} </li>
+              
+              <ul id="nm2"> {{p.description}} </ul>
+              
+              <ul id="nm2">Technology/Tools: {{p.tech}} </ul>
               {% endfor%}
             </div>
             <br>
-            <br>
+           
             <div id = "internships">
               <li id="nm1"> INTERNSHIP </li>
-              <br>
+             
               {% for i in internship %}
-              <br>
-              <li id="nm1"> {{i.company}} </li>
-              <br>
-              <li id="nm2"> {{i.description}} </li>
-              <br>
+             
+              <li id="nm6"> {{i.company}} </li>
+              
+              <ul id="nm2"> {{i.description}} </ul>
+             
               {% endfor%}
             </div>
               <br>
             <div id = "certifications">
               <li id="nm1"> CERTIFICATIONS </li>
-              <br>
               {% for c in certificate %}
-              <br>
+              
               <table width="100%" >
                 <tr valign="top">
                   <td bgcolor="white" width="50%">
-                    <li id="nm2"> {{c.title}} </li>
+                    <li id="nm6"> {{c.title}} </li>
                   </td>
                   <td bgcolor="white" width="30%">
                     <li id="nm2"> -{{c.source}}. </li>
@@ -333,24 +301,25 @@ td
             </div>
             <br>
             <div id = "technical skill">
-              <li id="nm1">Languages: </li> <li id="nm2">   {{tech.languages}}. </li>
-              <br>
-              <br>
-              <li id="nm1"> Tools: </li> <li id="nm2"> {{tech.tools}}. </li>
-              <br>
-              <br>
-              <li id="nm1"> Familiar:  </li> <li id="nm2">   {{tech.familiar}}. </li>
-              <br>
+              <li id="nm1">Languages: </li> <ul id="nm2">   {{tech.languages}}. </ul>
+              
+              <li id="nm1"> Tools: </li> <ul id="nm2"> {{tech.tools}}. </ul>
+              
+              <li id="nm1"> Familiar:  </li> <ul id="nm2">   {{tech.familiar}}. </ul>
+              
               <br>
             </div>
-          </td>
-          <td bgcolor="white" width="2%" >
          
-          </td>
-          </tr>
-          <table>
+            <br>
+            <br>
+            <div id = "addr">
+              <li id="nm1">Address: </li> <ul id="nm2" >{{personal.address}}. </ul>
+              
+              <li id="nm1"> Father Name: </li> <ul id="nm2"> {{personal.father}}. </ul>
+              
+              <li id="nm1"> DOB:  </li> <ul id="nm2">   {{personal.dob}}. </ul>
+            </div>
+            
             
            </body>
-       </html>
-    </body>
 </html>
