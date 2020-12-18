@@ -10,6 +10,7 @@ urlpatterns = [
        path('samples/', views.projectview, name='orm-sample'),
          path('internship/', views.internshipview, name='orm-internship'),
           path('certificate/', views.certificateview, name='orm-certificate'),
-          path('choice/', views.choiceview, name='orm-choice')
+          path('choice/', views.choiceview, name='orm-choice'),
+           path('pdf/', views.render_pdf, name='orm-pdf')
 
 ]

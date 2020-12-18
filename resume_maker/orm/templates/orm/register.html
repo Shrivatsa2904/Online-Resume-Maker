@@ -5,7 +5,7 @@
         {% load static %}  
         <link rel = "stylesheet" href = "{%   static 'orm/style1.css' %}">
     </head>
-    <body>
+    <body id="bod">
         <div class = "login">
            
             <div class = "form-box">  
@@ -25,14 +25,9 @@
                   {{form.password2}}
                 <button type="submit" class="submit-btn">Register</button>
                 <div>
-                    Already have an account? <a href="{% url 'orm-login' %}" >Login</a>
+                    Already have an account? <a style="color: aqua;"href="{% url 'orm-login' %}" >Login</a>
                 </div>
             </form>
-            <br>
-            <div class="social-icons">
-                <h5 class="heading3"> Signup with</h5>
-                <img src = "{%   static 'orm/images/google.png' %}"
-              </div>
           </div>
             </div>
            

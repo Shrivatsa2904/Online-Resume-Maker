@@ -1,46 +1,356 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-    <head>
-        <title>Choice Page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel = "stylesheet" href = "{%   static 'orm/style2.css' %}">
+  <head>
+    <link type="text/css" rel="stylesheet" href="https://www.dropbox.com/s/trsldt0me90jzs8/resume.css"/>
+    <title>Resume</title> 
+    <link rel = "stylesheet" href = "{%   static 'orm/resume1.css' %}">
+    <style type="text/css">
+    @page {
+      size: A4;
+      margin: 1cm;
+      @frame footer {
+          -pdf-frame-content: footerContent;
+          bottom: 0cm;
+          margin-left: 9cm;
+          margin-right: 9cm;
+          height: 1cm;
+      }
+
+      div
+{
+    border-radius: 5px;
+    }
+#header
+{
+    position: absolute;
+    z-index: 1;
+    height:70px;
+    width: 98%;
+    background-color: white;
+    margin-top: 20px;
+	}
+	
+#headp{
+	position: absolute;
+	height:90px;
+	background-color: white;
+    margin-top: 40px;
+}
+
+#nm {
+	float:left;
+	font-size: 13px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight: bold;
+	list-style-type: none;
+	
+}
+
+#nm1{
+	float:left;
+	font-size: 16px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bolder;
+	list-style-type: none;
+	
+}
+
+#nm2{
+	float:left;
+	font-size: 16px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bold;
+	list-style-type: none;
+	
+}
+
+#nm3{
+	float:left;
+	font-size: 18px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bolder;
+	list-style-type: none;
+	
+}
+
+
+#nm4{
+	float:left;
+	font-size: 20px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bolder;
+	list-style-type: none;
+	tab-size: 2;
+}
+
+#nm5{
+	float:left;
+	font-size: 20px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight:bold;
+	list-style-type: none;
+	tab-size: 2;
+}
+
+
+
+#name {
+  
+	margin-left: 20px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight: bold;
+	
+}
+
+#email{
+    float:right;
+    margin-right: 20px;
+	padding-bottom: 10px;
+	font-size: 18px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-weight: bold;
+}
+
+#contact
+{
+    margin-left:45%;
+    padding-bottom: 10px;
+	font-size: 18px;
+	font-family: Verdana, sans-serif;
+	color: #ffffff;
+    }
+
+a:hover {
+    font-weight: bold;
+}
+
+.right
+{
+    float: left;
+    margin-top: 50px;
+    padding-left:5px;
+    /*margin-right: -10px;
+    margin-left: 14%;*/
+    height: auto;
+    width: 99%;
+    background-color: #E3EDD8;
+    }
+
+/*.left
+{
+    float: left;
+    margin-top: 50px;
+    /*margin-right: -90px;
+    height: relative;
+    width: 10%;
+    background-color: #4160E8;
+    }*/
+    
+#footer
+{
+    height:40px;
+    clear:both;
+    position: relative;
+    background-color: #C1E3E1;
+    }
+    
+h3
+{
+    text-decoration: underline;
+    }
+
+#job-responsibilities
+{
+    padding: 1px;
+    }
+.job-title
+{
+    font-weight: bold;
+    }
+table
+{
+    border: 1px dashed black;
+    }
+td
+{
+    padding: 2px;
+    border: 1px solid #E88741;
+    }
+
+#course-name
+{
+    font-weight:bold;
+    }
+
+#company-name
+{
+    height:2px;
+    text-decoration:underline;
+    }
+#job-title
+{
+    height: 5px;
+    }
+.job-duration
+{
+    float:right;
+    }
+#heading
+{
+    font-weight:bold;
+	}
+	
+	table {
+		border: none;
+		border-collapse: collapse;
+	}
+	
+	td {
+		border: none;
+	}
+      
+    </style>
+  
     </head>
     <body>
-        <ul>
-            <li><a style="float:right" href="{% url 'orm-dashboard'%}">Home</a></li>
-           <li class="usern">Hello, {{request.user}}</li>
-            <li style="float:right"><a href="{% url 'orm-logout'%}"> Logout </a></li>
-          </ul>
-
-       
-          {{personal}}
-          <br>
-          {% for i in education %}
-          {{i}}
-          {% endfor%}
-        
-       <br>
-       {% for j in internship %}
-        {{j}}
-        {% endfor%}
-        <br>
-        {% for k in project %}
-        {{k}}
-        {% endfor%}
-        <br>
-        {% for l in certificate %}
-        {{l}}
-        {% endfor%}
-        <br>
-     
-        {{tech}}
       
-
-
-
+  
+      <html>
+       
+       <body>
+       
+        <table width="100%" >
+          <tr valign="top">
+          <td bgcolor="white" width="2%">
+         
+          </td>
+          <td bgcolor="white" height="200" width="98%" >
+            <div id = "headp"></div>
+            <li id="nm1">{{personal.name}}</li>
+            <br>
+            <li id="nm">Email: {{personal.email}}</li>
+            <br>
+            <li id="nm">Tel: +91{{personal.phone}}</li>
+            <br>
+            <li id="nm">{{personal.linkedin}}</li>
+            <br>
+            <li id="nm">{{personal.github}}</li>
+            <br>
+          </div>
+          <br>
+          <br>
+            <div id = "executive summary">
+              <li id="nm1">EXCECUTIVE SUMMARY</li>
+              <br>
+              <li id="nm2"> {{personal.summary}}. </li>
+            
+            </div>
+            <br>
+            <br>
+            <div id = "education">
+              <br>
+              <li id="nm1">EDUCATION</li>
+              {% for e in education %}
+              <br>
+              <table width="100%" >
+                <tr valign="top">
+                  <td bgcolor="white" width="30%">
+              <li id="nm2"> {{e.start}}-{{e.end}} </li>
+                  </td>
+                  <td bgcolor="white" width="50%">
+                   
+                    <li id="nm3"> {{e.name}} </li>
+                    <br>
+                   
+                    <li id="nm2"> {{e.subject}} </li>
+                    <br>
+                    
+                    <li id="nm3"> {{e.score}} </li>
+                    <br>
+                        </td>
+                        <td bgcolor="white" width="20%">
+                          <li id="nm3"> {{e.location}} </li>
+                              </td>
+                </tr>
+              </table>
+                  <br>
+             {% endfor %}
+            </div>
+            <br>
+            <div id = "projects">
+              <li id="nm1">ACADEMIC PROJECT</li>
+              {% for p in project %}
+              <br>
+              <br>
+              <li id="nm1"> {{p.title}} </li>
+              <br>
+              <li id="nm2"> {{p.description}} </li>
+              <br>
+              <li id="nm2">Technology/Tools: {{p.tech}} </li>
+              {% endfor%}
+            </div>
+            <br>
+            <br>
+            <div id = "internships">
+              <li id="nm1"> INTERNSHIP </li>
+              <br>
+              {% for i in internship %}
+              <br>
+              <li id="nm1"> {{i.company}} </li>
+              <br>
+              <li id="nm2"> {{i.description}} </li>
+              <br>
+              {% endfor%}
+            </div>
+              <br>
+            <div id = "certifications">
+              <li id="nm1"> CERTIFICATIONS </li>
+              <br>
+              {% for c in certificate %}
+              <br>
+              <table width="100%" >
+                <tr valign="top">
+                  <td bgcolor="white" width="50%">
+                    <li id="nm2"> {{c.title}} </li>
+                  </td>
+                  <td bgcolor="white" width="30%">
+                    <li id="nm2"> -{{c.source}}. </li>
+                  </td>
+                </tr>
+              </table>
+              {% endfor%}
+            </div>
+            <br>
+            <div id = "technical skill">
+              <li id="nm1">Languages: </li> <li id="nm2">   {{tech.languages}}. </li>
+              <br>
+              <br>
+              <li id="nm1"> Tools: </li> <li id="nm2"> {{tech.tools}}. </li>
+              <br>
+              <br>
+              <li id="nm1"> Familiar:  </li> <li id="nm2">   {{tech.familiar}}. </li>
+              <br>
+              <br>
+            </div>
+          </td>
+          <td bgcolor="white" width="2%" >
+         
+          </td>
+          </tr>
+          <table>
+            
+           </body>
+       </html>
     </body>
 </html>

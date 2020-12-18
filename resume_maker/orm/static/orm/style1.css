@@ -18,9 +18,10 @@
     height : 550px;
     position: relative;
     margin : 2% auto;
-    background: #fff;
     padding: 2px;
     overflow: hidden;
+    background-color:  background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
 }
 
 .button-box{
@@ -58,7 +59,7 @@
 }
 
 .input-group {
-    top : 100px;
+    top : 110px;
     position: absolute;
     width: 290px;
     margin-left: 50px;
@@ -91,17 +92,17 @@
 
 .heading {
     margin-left: 140px;
-    color: black;
+    color: white;
 }
 .heading2{
     margin-left: 90px;
-    color: black;
+    color:white;
    
 }
 .heading3{
     margin-left: 150px;
     margin-top: 20px;
-    color: black;
+    color:white;
    
 }
 #messages{

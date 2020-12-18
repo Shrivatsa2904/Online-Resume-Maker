@@ -9,6 +9,9 @@ from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user,allowed_users
 from django.contrib.auth.models import Group
 from .models import education
+from django.template.loader import render_to_string
+from io import BytesIO
+from xhtml2pdf import pisa
 
 # Create your views here.
 @login_required(login_url = 'orm-login')
@@ -92,8 +95,8 @@ def certificateview(request):
             request.session['certificateinfo'] =  certificate
             request.session['technicalinfo'] =  technical
             return  render(request,'orm/choice.html',{'internship':request.session['internshipinfo'],
-            'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
-            'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']})
+'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
+'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']})
 
     return render(request, 'orm/certificate.html', {'certform':certificateform,'techform':tech })
 
@@ -101,6 +104,21 @@ def certificateview(request):
 def choiceview(request):
     return render(request, 'orm/choice.html')
 
+def render_pdf(request):
+    path = "orm/choice.html"
+    context = {'internship':request.session['internshipinfo'],
+            'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
+            'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']}
+
+    html = render_to_string('orm/choice.html',context)
+    io_bytes = BytesIO()
+    
+    pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), io_bytes)
+    
+    if not pdf.err:
+        return HttpResponse(io_bytes.getvalue(), content_type='application/pdf')
+    else:
+        return HttpResponse("Error while rendering PDF", status=400)
    
 @unauthenticated_user
 def loginpage(request):

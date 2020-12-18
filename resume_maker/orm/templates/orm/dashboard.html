@@ -18,36 +18,47 @@
           </ul>
           <form id="regForm" class = "reff" method="POST" action="">
             {% csrf_token %}
-            <div class="tab">Name:
+            
+            <div class="tab">  <p >Name</p>
+           
               <p>Full Name*</p>
+              {{form.name.errors}}
               {{form.name}}
             </div>
-            <div class="tab">Personal Info:
+            <div class="tab"><p>Personal Info:</p>
             <p>Phone*</p>
+            {{form.phone.errors}}
              {{form.phone}}
              <p>Email*</p>
+             {{form.email.errors}}
              {{form.email}}
              <p>Date of Birth</p>
              {{form.dob}}
             </div>
-            <div class="tab">More Personal Info:
+            <div class="tab"><p>More Personal Info:</p>
               <p>Father Name</p>
+              {{form.father.errors}}
                {{form.father}}
                <p>Address</p>
+               {{form.address.errors}}
                {{form.address}}
                <p>LinkedIn</p>
+               {{form.linkedin.errors}}
                {{form.linkedin}}
                <p>Github</p>
+               {{form.github.errors}}
                {{form.github}}
             </div>
-            <div class="tab">Executive Summary:
+            <div class="tab"><p>Executive Summary:</p>
+              {{form.summary.errors}}
              {{form.summary}}
             </div>
-            <div class="tab" id = "ed">Education:
+            <div class="tab" id = "ed"><p>Education:</p>
               {{edform.management_form}}
               {% for f in edform %}
               <div class="ed-form">
                 <br>
+                {{f.errors}}
               {{f.as_p}}
               </div>
               {% endfor %}

@@ -6,4 +6,36 @@
     <body>
         <h1>Welcome to About page of Online Resume Maker</h1>
     </body>
+    <ul>
+        <li><a style="float:right" href="{% url 'orm-dashboard'%}">Home</a></li>
+       <li class="usern">Hello, {{request.user}}</li>
+        <li style="float:right"><a href="{% url 'orm-logout'%}"> Logout </a></li>
+      </ul>
+
+   
+      {{personal}}
+      <br>
+      {% for i in education %}
+      {{i}}
+      {% endfor%}
+    
+   <br>
+   {% for j in internship %}
+    {{j}}
+    {% endfor%}
+    <br>
+    {% for k in project %}
+    {{k}}
+    {% endfor%}
+    <br>
+    {% for l in certificate %}
+    {{l}}
+    {% endfor%}
+    <br>
+ 
+    {{tech}}
 </html>
+
+return  render(request,'orm/choice.html',{'internship':request.session['internshipinfo'],
+'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
+'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']})
