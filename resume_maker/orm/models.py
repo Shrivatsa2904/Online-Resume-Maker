@@ -33,6 +33,9 @@ class education(models.Model):
     subject = models.CharField(max_length=127)
     location = models.CharField(max_length=127, blank=True)
 
+    class meta:
+        db_table = 'edudb'
+
     def __unicode__(self):
         return "{}: {} at {} ({})".format(self.name,
                                           self.start,

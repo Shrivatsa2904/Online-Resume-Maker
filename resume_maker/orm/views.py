@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user,allowed_users
 from django.contrib.auth.models import Group
-
+from .models import education
 
 # Create your views here.
 @login_required(login_url = 'orm-login')
@@ -25,13 +25,18 @@ def dashboard(request):
         print("vatsa not valid")
         if  form.is_valid() and educationform.is_valid():
             print("vatsa valid")
-            education = educationform.cleaned_data
+            educations = educationform.cleaned_data
             new_resume_item = form.save(commit=False)
             new_resume_item.user = request.user
             new_resume_item.save()
+            for f in educationform:
+                a = f.save(commit=False)
+                a.user = request.user
+                a.save()
             name = form.cleaned_data
+            education(name=name,user = request.user).save()
             request.session['personalinfo'] = name
-            request.session['educationinfo'] = education
+            request.session['educationinfo'] = educations
             return  redirect(projectview)
     print("fail")
     return render(request, 'orm/dashboard.html', {'form': form,'edform':educationform})
@@ -42,6 +47,10 @@ def projectview(request):
     if request.method == 'POST':
         projectform = projectFormset(request.POST)
         if  projectform.is_valid():
+            for f in projectform:
+                a = f.save(commit=False)
+                a.user = request.user
+                a.save()
             project = projectform.cleaned_data
             request.session['projectinfo'] = project
             return  redirect(internshipview)
@@ -53,6 +62,10 @@ def internshipview(request):
     if request.method == 'POST':
         internshipform =  internshipFormset(request.POST)
         if  internshipform.is_valid():
+            for f in internshipform:
+                a = f.save(commit=False)
+                a.user = request.user
+                a.save()
             internship = internshipform.cleaned_data
             request.session['internshipinfo'] = internship
             return  redirect(certificateview)
@@ -67,6 +80,13 @@ def certificateview(request):
         certificateform =  certificateFormset(request.POST)
         tech = technicalinfo(request.POST)
         if   certificateform.is_valid() and tech.is_valid():
+            for f in certificateform:
+                a = f.save(commit=False)
+                a.user = request.user
+                a.save()
+            t = tech.save(commit=False)
+            t.user = request.user
+            t.save()
             certificate =  certificateform.cleaned_data
             technical = tech.cleaned_data
             request.session['certificateinfo'] =  certificate
