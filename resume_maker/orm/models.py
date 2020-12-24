@@ -77,8 +77,8 @@ class internships(models.Model):
 
 class certifications(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title =  models.CharField(max_length=127)
-    source = models.CharField(max_length=127)
+    title =  models.CharField(max_length=127, blank=True)
+    source = models.CharField(max_length=127, blank=True)
 
     def __unicode__(self):
         return "{}: {} at {} ({})".format(self.title,
@@ -86,9 +86,9 @@ class certifications(models.Model):
 
 class technical(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    languages =  models.CharField(max_length=127)
-    tools =  models.CharField(max_length=127)
-    familiar = models.CharField(max_length=127)
+    languages =  models.CharField(max_length=127, blank=True)
+    tools =  models.CharField(max_length=127, blank=True)
+    familiar = models.CharField(max_length=127, blank=True)
 
     def __unicode__(self):
         return "{}: {} at {} ({})".format(self.languages,

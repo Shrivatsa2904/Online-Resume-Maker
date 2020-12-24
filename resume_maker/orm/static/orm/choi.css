@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 39%;
+    padding: 5px;
+    margin-left: 120px;
+   
+  }
+  .row{
+    margin-top: 200 px;
+  }
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+   
+  }
+
+  *{
+    font-family: san-serif;
+}
+
+a{
+    color: black;
+}
+body{
+    margin:0;
+}
+.heading4{
+    
+    text-align: right;
+    
+}
+{
+  font-family: san-serif;
+}
+.login{
+  height : 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  margin:0;
+  padding:0;
+
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#f3f3f3;
+  border: none;
+}
+
+li {
+  float: left;
+  border-right:1px solid rgb(122, 93, 226);
+  border: none;
+}
+
+li:last-child {
+  border-right: none;
+  border: none;
+}
+
+li a {
+  display: block;
+  color:  rgb(122, 93, 226);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: aliceblue;
+  border: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+  border: none;
+}
+
+.active {
+  background-color: #040007;
+  border: none;
+}
+
+.usern {
+    margin-left: 550px;
+    font-size: large;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("images/background.jpg");
+}
+
+.reff {
+    background-color:  background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    margin: 15px auto;
+    font-family: Raleway;
+    padding: 30px;
+    width: 70%;
+   min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: white;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+p {
+  color: white;
+}
+
+.btn {
+  background-color: dodgerblue;
+  border: none;
+  color:  #270303;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  font-family: Raleway;
+ margin-left: 135px;
+ margin-top: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+#myImg1:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content1 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+#caption1 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+
+.modal-content1, #caption1 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 80%;
+  }
+}
+  

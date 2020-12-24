@@ -27,13 +27,13 @@ class personinfo(forms.ModelForm):
         model = persondetails
         fields = ['name','phone','email','linkedin','github','dob','address','father','summary']
         widgets = {
-            'summary' : forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'Description'}),
+            'summary' : forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'Description',"padding":'100px'}),
             'phone' :   forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'Phone number','required':'required'})
         }
 
 class educationinfo(forms.ModelForm):
     name = forms.CharField(label='Instituion Name',widget=forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'College or School name ex.,BNMIT','required':'required',}))
-    start = forms.CharField(widget=forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'ex.,16/08/2017','required':'required'}))
+    start = forms.CharField(widget=forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'ex.,16/08/2017',}))
     end = forms.CharField(widget=forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'ex., 21/07/2021 or present'}))
     score= forms.CharField(label='CGPA/Percentage',widget=forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'ex., cgpa 8.5 or percentage 88%','required':'required'}))
     subject = forms.CharField(label='Branch or Subject combination',widget=forms.TextInput(attrs={'oninput':"this.className = ''",'placeholder': 'Subjects studied or branch ex., PCMB or Information Science'}))

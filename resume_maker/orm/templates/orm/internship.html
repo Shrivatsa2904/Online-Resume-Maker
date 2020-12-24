@@ -21,6 +21,7 @@
               {{intform.management_form}}
               {% for f in intform %}
               <div class="ed-form">
+                {{f.errors}}
                 <br>
               {{f.as_p}}
               </div>

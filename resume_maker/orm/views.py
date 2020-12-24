@@ -94,21 +94,28 @@ def certificateview(request):
             technical = tech.cleaned_data
             request.session['certificateinfo'] =  certificate
             request.session['technicalinfo'] =  technical
-            return  redirect(render_pdf)
+            return  redirect(choiceview)
 
     return render(request, 'orm/certificate.html', {'certform':certificateform,'techform':tech })
 
 @login_required(login_url = 'orm-login')
 def choiceview(request):
+    if request.method == 'POST':
+        if 'resume1' in request.POST:
+            return  redirect(render_pdf1)
+        
+        if 'resume2'  in request.POST:
+            pass
+
     return render(request, 'orm/choice.html')
 
-def render_pdf(request):
-    path = "orm/choice.html"
+def render_pdf1(request):
+    path = "orm/resume1.html"
     context = {'internship':request.session['internshipinfo'],
             'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
             'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']}
 
-    html = render_to_string('orm/choice.html',context)
+    html = render_to_string('orm/resume1.html',context)
     io_bytes = BytesIO()
     
     pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), io_bytes)
