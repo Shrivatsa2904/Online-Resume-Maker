@@ -105,7 +105,7 @@ def choiceview(request):
             return  redirect(render_pdf1)
         
         if 'resume2'  in request.POST:
-            pass
+             return  redirect(render_pdf2)
 
     return render(request, 'orm/choice.html')
 
@@ -124,7 +124,24 @@ def render_pdf1(request):
         return HttpResponse(io_bytes.getvalue(), content_type='application/pdf')
     else:
         return HttpResponse("Error while rendering PDF", status=400)
-   
+
+
+def render_pdf2(request):
+    path = "orm/resume2.html"
+    context = {'internship':request.session['internshipinfo'],
+            'personal': request.session['personalinfo'],'education':request.session['educationinfo'],
+            'certificate':request.session['certificateinfo'],'tech': request.session['technicalinfo'],'project': request.session['projectinfo']}
+    html = render_to_string('orm/resume2.html',context)
+    io_bytes = BytesIO()
+    
+    pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), io_bytes)
+    
+    if not pdf.err:
+        return HttpResponse(io_bytes.getvalue(), content_type='application/pdf')
+    else:
+        return HttpResponse("Error while rendering PDF", status=400)
+
+
 @unauthenticated_user
 def loginpage(request):
 

@@ -11,6 +11,8 @@ urlpatterns = [
          path('internship/', views.internshipview, name='orm-internship'),
           path('certificate/', views.certificateview, name='orm-certificate'),
           path('choice/', views.choiceview, name='orm-choice'),
-           path('pdf1/', views.render_pdf1, name='orm-pdf1')
+           path('pdf1/', views.render_pdf1, name='orm-pdf1'),
+              path('pdf2/', views.render_pdf2, name='orm-pdf2')
+
 
 ]
