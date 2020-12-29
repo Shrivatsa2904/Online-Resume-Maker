@@ -30,7 +30,7 @@ class education(models.Model):
     start =   models.CharField(max_length=127)
     end =  models.CharField(max_length=127)
     score =  models.CharField(max_length=127)
-    subject = models.CharField(max_length=127)
+    subject = models.CharField(max_length=127, blank=True)
     location = models.CharField(max_length=127, blank=True)
 
     class meta:

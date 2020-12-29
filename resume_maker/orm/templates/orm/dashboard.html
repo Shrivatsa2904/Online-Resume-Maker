@@ -51,6 +51,7 @@
             </div>
             <div class="tab"><p>Executive Summary:</p>
               {{form.summary.errors}}
+              <p>ex: 4th year Enthusiastic BE student looking for an opportunity to work and grow as a Professional Engineer in an organization where that gives me an opportunity for selfimprovement and leadership, while contributing to the symbolic growth of the organization with my technical, innovative and logical skills.  </p>
              {{form.summary}}
             </div>
             <div class="tab" id = "ed"><p>Education:</p>
@@ -122,7 +123,7 @@
           document.getElementById("prevBtn").style.display = "inline";
         }
         if (n == (x.length - 1)) {
-          document.getElementById("nextBtn").innerHTML = "Submit";
+          document.getElementById("nextBtn").innerHTML = "Next";
         } else {
           document.getElementById("nextBtn").innerHTML = "Next";
         }
