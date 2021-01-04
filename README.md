@@ -1,5 +1,7 @@
 # Online-Resume-Maker
 
+Web Framework: Django
+
 1. Clone the Repository.
 2. Run the following commands:
   1) python manage.py make migrations
